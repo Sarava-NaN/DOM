@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom_Creatry</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+         text-align: center;
+         background-color:rgb(87, 4, 87);
+         display: flex;
+        }
+        .logo{
+         width: 220px;
+         clip-path: circle(33%);
+         cursor: pointer;
+      }
+        img{
+            width: 100%;
+        }
+        .lists{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:60%;
+            color: white;
+            font-size: 1.4rem;
+            list-style-type: none;
+            transform: translateX(30%);
+            /* this is one method to center this */
+            /* position: absolute;
+            right: 14px;
+            top: 50px; */
+        }
+        li{
+         cursor: pointer;   
+        }
+        .lists li::after{
+            content: '';
+            height: 5px;
+            display: block;
+            background-color: #07BEB8;
+            transform: scale(0);
+            transition: 1s ease-in;
+            transform-origin:right;
+        }
+        .lists li::before{
+            content: '';
+            height: 5px;
+            display: block;
+            background-color: #C4FFF9;
+            transform: scale(0);
+            transition: 1s ease-in;
+            transform-origin: left;
+        }
+        .lists li:hover::after{
+            transform: scale(1.4);
+        }
+        .lists li:hover::before{
+            transform: scale(1);
+        }
+        .input-container{
+            padding:36px;
+            background-color:#381D2A;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .input{
+            width: 360px;
+            padding: 8px;
+            transform: translateX(-10px);
+            border-radius: 2px;
+            outline:none;
+            border: none;
+            font-size: large;
+            color: #001514;
+            font-weight: 900;
+            text-transform: capitalize;        }
+        ::placeholder{
+            font-weight: 10;
+            color: black;
+        }
+        .btn{
+            background-color:#63a1a8;
+            color:#FDF0D5;
+            padding:8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            outline:none;
+            border: none;
+        }
+        .list-container{
+            padding:36px;
+            background-color:#381D2A;
+            width: 500px;
+            height:fit-content;
+            margin: auto;
+            text-align: center;
+            margin-top: 3rem;
+        }
+       
+        ul{
+            color: #FDF0D5;
+            font-size: 1.8rem;
+                }
+        li{
+            list-style-type: none;
+        }
+        #new{
+            background-color: #07BEB8;
+            padding: 12px;
+            width:fit-content;
+            margin-top: 12px;
+            border-radius: 12px;
+            transition: all 1s;
+            cursor: pointer;
+        }
+        #new:hover{
+            background-color: #01fcef9a;
+            color:#001514;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/IMG_20230218_164604.jpg" alt="">
+        </div>
+        <ul class="lists">
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+            <li>SERVICE</li>
+        </ul>
+    </header>
+     <div class="input-container">
+        <input type="text" name=""placeholder="search" class="input" id="input">
+        <button type="button" class="btn" id="btn">SAVE</button>
+     </div>
+     <div class="list-container">
+        <ul class="height">
+           <li></li> 
+        </ul>
+     </div>
+    <script>
+        const input=document.getElementById("input");
+        const btn=document.getElementById("btn");
+      
+        btn.addEventListener("click",()=>{
+         const list =  document.getElementsByClassName('list-container');
+         list[0].innerHTML +=`<ul id="new"><li>${input.value}</li></ul>`;
+         input.value="";
+        })
+    </script>
+</body>
+</html>
