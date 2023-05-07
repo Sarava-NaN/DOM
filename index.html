@@ -65,6 +65,21 @@
         .lists li:hover::before{
             transform: scale(1);
         }
+        .nav-bar{
+            width:10%;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            display: none;
+        }
+        .link1,.link2,.link3{
+          width: 35px;
+          height:5%;
+          margin-top: .5rem;
+          background-color:azure;
+        }
         .input-container{
             padding:36px;
             background-color:#381D2A;
@@ -83,7 +98,8 @@
             font-size: large;
             color: #001514;
             font-weight: 900;
-            text-transform: capitalize;        }
+            text-transform: capitalize;
+        }
         ::placeholder{
             font-weight: 10;
             color: black;
@@ -127,6 +143,83 @@
             background-color: #01fcef9a;
             color:#001514;
         }
+        /* media query */
+        @media screen and (max-width:1000px){
+            .lists{
+            width:55%;
+            font-size: 1.5rem;
+            transform: translateX(25%);
+        }
+        }
+        @media screen and (max-width:800px){
+            .lists{
+            width:58%;
+            font-size: 1.2rem;
+            transform: translateX(14%);
+        }
+        }
+        @media screen and (max-width:650px){
+            .lists{
+            width:72%;
+            font-size: 1.2rem;
+            transform: translateX(-5%);
+        }
+        .logo{
+            margin-left: -30px;
+        }
+        }
+        @media screen and (max-width:525px){
+            .lists{
+            display: none;
+        }
+        .nav-bar{
+            width:22%;
+            transform: translateY(12px) translateX(150px);
+            height: 10vh;
+            display:block;
+            margin: auto;
+        }
+        .link1,.link2,.link3{
+          width: 44px;
+          height:8%;
+          margin-top: .8rem;
+          background-color:azure;
+        }
+        }
+        @media screen and (max-width:488px){
+        .nav-bar{
+            width:22%;
+            transform: translateY(12px) translateX(100px);
+        }
+        .input-container{
+            padding:26px;
+            width:auto;
+            margin: auto;
+            margin-top: 6rem;
+        }
+        .input{
+            width:fit-content;
+            margin-left: -10px;
+        }
+        .list-container{
+            width:350px;
+            height:fit-content;
+        }
+        .btn{
+            padding: 12px;
+            transform: translateY(-3px);
+        }
+        }
+        @media screen and (max-width:400px){
+            header{
+                width:100%;
+                overflow: hidden;
+            }
+        .nav-bar{
+            width:22%;
+            transform: translateY(12px) translateX(70px);
+        }
+        }
     </style>
 </head>
 <body>
@@ -140,6 +233,11 @@
             <li>CONTACT</li>
             <li>SERVICE</li>
         </ul>
+        <div class="nav-bar">
+            <div class="link1"></div>
+            <div class="link2"></div>
+            <div class="link3"></div>
+        </div>
     </header>
      <div class="input-container">
         <input type="text" name=""placeholder="search" class="input" id="input">
